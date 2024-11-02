@@ -36,7 +36,7 @@ git clone https://github.com/RiceRatthawan/Product_System_APP.git
   Go to `backend` folder
 ```
 # Install
-npm install express nysql2 cors
+npm install express mysql2 cors
 # Run
 node index.js
 ```
