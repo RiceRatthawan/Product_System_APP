@@ -110,8 +110,8 @@ ng serve
            }
          ]
    4. Add New Product
-      - Method: POST
-      - Endpoint: /products/insert
+      - Method: `POST`
+      - Endpoint: `/products/insert`
       - Description: Adds a new product to the database.
       - Request Body:
            ```
@@ -128,14 +128,14 @@ ng serve
             "msg": "New product successfully added"
            }
    5. Update Product
-      - Method: PATCH
-      - Endpoint: /products/update/:id
+      - Method: `PATCH`
+      - Endpoint: `/products/update/:id`
       - Description: Updates an existing product by ID.
       - Path Parameter:
           - `id` (integer): ID of the product to update.
       - Request Example:
            ```
-             PATCH /update/118
+             PATCH /products/update/118
            ```
       - Request Body:
            ```
@@ -149,4 +149,19 @@ ng serve
          ```
            {
             "msg": "Product data updated successfully"
+           }
+   6. Delete Product
+      - Method: `DELETE`
+      - Endpoint: `/products/delete/:id`
+      - Description: Deletes a product by ID.
+      - Path Parameter:
+          - `id` (integer): ID of the product to delete.
+      - Request Example:
+           ```
+             PATCH /products/delete/118
+           ```
+       - Response:
+         ```
+           {
+            "msg": "Product deleted successfully"
            }
