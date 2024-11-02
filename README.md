@@ -51,7 +51,7 @@ ng serve
 ```http://localhost:3000/api```
 
 - **Endpoints**
-  1. Get all products
+  1. Get All Products
      - Method: `GET`
      - Endpoint: `/products`
      - Description: Fetches all products from the database.
@@ -72,15 +72,14 @@ ng serve
           },
           ...
         ]
-      ```
-  2. Get all products
+  2. Get Product by ID
      - Method: `GET`
      - Endpoint: `/products/:id`
      - Description: Fetches a single product by its ID.
      - Path Parameter:
         - `id` (integer): ID of the product to retrieve.
      - Response:
-       ```
+      ```
        [
          {
             "id": 101,
@@ -89,4 +88,65 @@ ng serve
             "price": 290
          }
         ]
-      ```
+    3. Search Products by Name or Category
+       - Method: `GET`
+       - Endpoint: `/products/search`
+       - Description: Searches for products by product_name or category.
+       - Query Parameters:
+            - `productname` (string, optional): Partial or full product name.
+            - `category` (string, optional): Partial or full category name.
+       - Request Example:
+           ```
+             GET /products/search?productname=wired&category=electronics
+           ```
+       - Response:
+         ```
+         [
+           {
+            "id": 101,
+            "product_name": "32GB MicroSD Card",
+            "category": "Electronics",
+            "price": 290
+           }
+         ]
+   4. Add New Product
+      - Method: POST
+      - Endpoint: /products/insert
+      - Description: Adds a new product to the database.
+      - Request Body:
+           ```
+             {
+              "id": 118,
+              "productname": "Wireless Mouse",
+              "category": "Electronics",
+              "price": 250
+             }
+           ```
+       - Response:
+         ```
+           {
+            "msg": "New product successfully added"
+           }
+   5. Update Product
+      - Method: PATCH
+      - Endpoint: /products/update/:id
+      - Description: Updates an existing product by ID.
+      - Path Parameter:
+          - `id` (integer): ID of the product to update.
+      - Request Example:
+           ```
+             PATCH /update/118
+           ```
+      - Request Body:
+           ```
+             {
+              "productname": "Wireless Mouse Gaming",
+              "category": "Electronics",
+              "price": 520
+             }
+           ```
+       - Response:
+         ```
+           {
+            "msg": "Product data updated successfully"
+           }
