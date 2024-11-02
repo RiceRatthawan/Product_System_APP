@@ -15,7 +15,7 @@ npm -v    # This will display the version of npm
 ```
 git clone https://github.com/RiceRatthawan/Product_System_APP.git
 ```
-- **MySQL Database**
+### **MySQL Database**
   1. Create a database named `mysql_db`
   2. Create a Products Table
      ```
@@ -32,14 +32,16 @@ git clone https://github.com/RiceRatthawan/Product_System_APP.git
      SELECT * FROM mysql_db.products;
      ```
   
- - **Backend Setup**: Go to `backend` folder
+### **Backend Setup**
+  Go to `backend` folder
 ```
 # Install
 npm install express nysql2 cors
 # Run
 node index.js
 ```
-- **Fronend**: Go to `product-system-app` folder
+### **Fronend**
+  Go to `product-system-app` folder
 ```
 # Install
 npm install -g @angular/cli
@@ -47,10 +49,10 @@ npm install -g @angular/cli
 ng serve
 ```
 ## API Documentation
-- **Base URL**: 
+### **Base URL**: 
 ```http://localhost:3000/api```
 
-- **Endpoints**
+### **Endpoints**:
   1. Get All Products
      - Method: `GET`
      - Endpoint: `/products`
@@ -79,7 +81,7 @@ ng serve
      - Path Parameter:
         - `id` (integer): ID of the product to retrieve.
      - Response:
-      ```
+       ```
        [
          {
             "id": 101,
@@ -88,7 +90,8 @@ ng serve
             "price": 290
          }
         ]
-    3. Search Products by Name or Category
+       ```
+   3. Search Products by Name or Category
        - Method: `GET`
        - Endpoint: `/products/search`
        - Description: Searches for products by product_name or category.
@@ -109,6 +112,7 @@ ng serve
             "price": 290
            }
          ]
+         ```
    4. Add New Product
       - Method: `POST`
       - Endpoint: `/products/insert`
@@ -127,6 +131,7 @@ ng serve
            {
             "msg": "New product successfully added"
            }
+         ```
    5. Update Product
       - Method: `PATCH`
       - Endpoint: `/products/update/:id`
@@ -150,6 +155,7 @@ ng serve
            {
             "msg": "Product data updated successfully"
            }
+         ```
    6. Delete Product
       - Method: `DELETE`
       - Endpoint: `/products/delete/:id`
@@ -165,3 +171,4 @@ ng serve
            {
             "msg": "Product deleted successfully"
            }
+         ```
