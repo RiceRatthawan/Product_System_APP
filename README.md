@@ -40,10 +40,53 @@ npm install express nysql2 cors
 node index.js
 ```
 - **Fronend**: Go to `product-system-app` folder
-  ```
+```
 # Install
 npm install -g @angular/cli
 # Run
 ng serve
 ```
+## API Documentation
+- **Base URL**: 
+```http://localhost:3000/api```
 
+- **Endpoints**
+  1. Get all products
+     - Method: `GET`
+     - Endpoint: `/products`
+     - Description: Fetches all products from the database.
+     - Response:
+       ```
+       [
+         {
+            "id": 101,
+            "product_name": "32GB MicroSD Card",
+            "category": "Electronics",
+            "price": 290
+          },
+          {
+            "id": 102,
+            "product_name": "4K Ultra HD Smart TV",
+            "category": "Electronics",
+            "price": 9999
+          },
+          ...
+        ]
+      ```
+  2. Get all products
+     - Method: `GET`
+     - Endpoint: `/products/:id`
+     - Description: Fetches a single product by its ID.
+     - Path Parameter:
+        - `id` (integer): ID of the product to retrieve.
+     - Response:
+       ```
+       [
+         {
+            "id": 101,
+            "product_name": "32GB MicroSD Card",
+            "category": "Electronics",
+            "price": 290
+         }
+        ]
+      ```
