@@ -7,6 +7,7 @@ const port = 3000;
 
 //middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors()); // Allow cross-origin requests
 
 //Connect db-mysql
